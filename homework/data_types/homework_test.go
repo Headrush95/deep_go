@@ -19,9 +19,7 @@ func ToLittleEndian[T customUint](number T) T {
 	endPtr := unsafe.Add(beginPtr, typeSize-1)
 
 	for range typeSize / 2 {
-		leftOctet := (*uint8)(beginPtr)
-		rightOctet := (*uint8)(endPtr)
-		*leftOctet, *rightOctet = *rightOctet, *leftOctet
+		*(*uint8)(beginPtr), *(*uint8)(endPtr) = *(*uint8)(endPtr), *(*uint8)(beginPtr)
 
 		beginPtr = unsafe.Add(beginPtr, 1)
 		endPtr = unsafe.Add(endPtr, -1)
