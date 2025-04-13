@@ -188,7 +188,7 @@ func ToLittleEndianBitShiftUint64(number uint64) uint64 {
 		(number&0xff)<<56
 }
 
-// BenchmarkConversion-20    	486409120	         2.601 ns/op	       0 B/op	       0 allocs/op
+// BenchmarkConversion-20    	477102271	         2.581 ns/op	       0 B/op	       0 allocs/op
 func BenchmarkConversion(b *testing.B) {
 	b.ReportAllocs()
 	for n := 0; n < b.N; n++ {
